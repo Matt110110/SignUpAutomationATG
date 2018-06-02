@@ -36,11 +36,22 @@ namespace SignUpAutomationATG
         public void SignUpFormFillup(string[] data)
         {
             // This method is currently giving a lot of issues. Let's see what can be done.
-            TxtFirstName.SendKeys(data[0]);
-            TxtLastName.SendKeys(data[1]);
-            TxtEmail.SendKeys(data[2]);
-            TxtPass.SendKeys("123456");
-            TxtConfPass.SendKeys("123456");
+            try
+            {
+                TxtFirstName.SendKeys(data[0]);
+                TxtLastName.SendKeys(data[1]);
+                TxtEmail.SendKeys(data[2]);
+                TxtPass.SendKeys("123456");
+                TxtConfPass.SendKeys("123456");
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine($"The error says {e.Message} and the stack trace is : \n {e.StackTrace}");
+            }
+
+            
+            
             
         }
     }
